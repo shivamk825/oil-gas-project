@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>oil gas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <script>
+window.onload = function () {
+    console.log('string')
+    // selectvalue();\
+    
+    var firstgraph={{graph  | safe}};
+    Plotly.plot('chartMboe',firstgraph,{})
+    console.log('frst',firstgraph)
+
+    var firstgraphemp={{graphemp  | safe}};
+    Plotly.plot('chartMboe2',firstgraphemp,{})
+    console.log('second',firstgraphemp)
+
+    var thirdgraph={{marketenterpricegraph  | safe}};
+    Plotly.plot('chartmarkenter',thirdgraph,{})
+    console.log('third',thirdgraph)
+
+    var fourthgraph={{ebitdagraph  | safe}};
+    Plotly.plot('chartebitda',fourthgraph,{})
+    console.log('fourth',fourthgraph)
+    }
+</script>
+<nav class="navbar navbar-inverse" style="background-color: cadetblue">
+
+</nav>
+
+
+</script>
+
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <div class ='chartMboe' id="chartMboe" style=" width: 100%;" ></div>
+
+    </div>
+    <div class="col-md-6">
+        <div class ='chartMboe2' id="chartMboe2" style=" width: 100%;"></div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="container2">
+    <div class="row">
+        <div class="col-md-6">
+        <div class ='chartmarkenter' id="chartmarkenter" style=" width: 100%;"></div>
+
+    </div>
+    <div class="col-md-6">
+        <div class ='chartebitda' id="chartebitda" style=" width: 100%;"></div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

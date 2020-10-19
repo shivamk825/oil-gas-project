@@ -13,7 +13,7 @@ import numpy as np
 app=Flask(__name__)  
 @app.route('/')
 def dahsboard():
-    df=pd.read_csv('C:/Users/91855/Desktop/oilgas1.csv',index_col=0)
+    df=pd.read_csv('C:/Users/91855/Desktop/git oil and gas/oil-gas-project/oilgas1.csv',index_col=0)
     print(df.head())
     companies=df['Company'].dropna()
     employe=df['Employees'].dropna()

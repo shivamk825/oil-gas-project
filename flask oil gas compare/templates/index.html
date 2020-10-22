@@ -36,7 +36,56 @@ window.onload = function () {
 
 </nav>
 
+<select id ='comp' onchange="getcompany(this.value)" name="comp" method="GET" action="/">
+    {% for comp in listofselection %}
+        <option value="{{comp}}" SELECTED>{{comp}}</option>"
+    {% endfor %}
+</select>
 
+
+
+<script>
+    function getcompany(e){
+        // var x=document.getElementById('comp').value
+        // console.log('stronn',event.target.value)
+        console.log('hiiii',document.getElementById('comp').value)
+        var selected_val=document.getElementById('comp').value;
+        $.ajax(
+                    {
+                        type:'POST',
+                        contentType:'application/json;charset-utf-08',
+                        // dataType:'json',
+                        url:'http://127.0.0.1:5000/selection_get?value='+selected_val,
+                        success:function (data) {
+                        Plotly.deleteTraces('chartMboe', 0);
+                        var graphas=JSON.parse(data.reply);
+                        Plotly.newPlot('chartMboe', graphas,{});
+
+                        Plotly.deleteTraces('chartMboe2', 0)
+                        var empgraph=JSON.parse(data.empgraphy);
+                        Plotly.plot('chartMboe2',empgraph,{});
+    
+                        Plotly.deleteTraces('chartmarkenter', [0,1])
+                        var graphmarkenterval=JSON.parse(data.markentervalgraph);
+                        Plotly.plot('chartmarkenter',graphmarkenterval,{});
+    
+                        Plotly.deleteTraces('chartebitda', 0);
+                        var deletedes=Plotly.deleteTraces('chartebitda', 0);                        
+                        console.log('deleted trace',deletedes)
+                        var graphebitda=JSON.parse(data.ebitdagraph1);
+                        Plotly.newPlot('chartebitda', graphebitda,{});
+                    }
+                    }
+                );
+    
+    }
+    
+    </script>
+    
+
+
+
+</select>
 </script>
 
 <br>
